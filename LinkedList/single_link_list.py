@@ -80,7 +80,6 @@ class SingleLinkList(object):
                 pre = cur
                 cur = cur.next
 
-
     def search(self, item):
         current = self.__head
         while current != None:
@@ -92,32 +91,32 @@ class SingleLinkList(object):
 
 
 if __name__ == "__main__":
-    ll = SingleLinkList()
-    print(ll.is_empty())
-    print(ll.length())
+    dll = SingleLinkList()
+    print(dll.is_empty())
+    print(dll.length())
 
-    ll.append(11)
-    print(ll.is_empty())
-    print(ll.length())
+    dll.append(11)
+    print(dll.is_empty())
+    print(dll.length())
 
-    ll.append(22)
-    ll.append(33)
-    ll.append(44)
-    ll.append(55)
-    ll.traverse()
+    dll.append(22)
+    dll.append(33)
+    dll.append(44)
+    dll.append(55)
+    dll.traverse()
 
-    ll.add(100)
-    ll.traverse()
+    dll.add(100)
+    dll.traverse()
 
-    ll.insert(-1, 9)
-    ll.insert(3, 99)
-    ll.insert(11, 999)
-    ll.traverse()
+    dll.insert(-1, 9)
+    dll.insert(3, 99)
+    dll.insert(11, 999)
+    dll.traverse()
 
-    ll.remove(9)
-    ll.traverse()
+    dll.remove(9)
+    dll.traverse()
 
-    ll.remove(100)
-    ll.traverse()
-    ll.remove(44)
-    ll.traverse()
+    dll.remove(100)
+    dll.traverse()
+    dll.remove(44)
+    dll.traverse()
