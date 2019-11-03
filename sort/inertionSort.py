@@ -35,6 +35,7 @@ def insertion_sort(aList):
         aList[prev_index + 1] = cur
 
 
+
 if __name__ == "__main__":
     ls = [9, 5, 3, 7, 8, 6, 5, 7, 0, 88, 12]
     print(ls)
