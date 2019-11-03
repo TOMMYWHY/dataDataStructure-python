@@ -5,26 +5,25 @@ class Stack(object):
         self.__list = []
         # 尾部 为栈顶
 
-    def push(self,item):
+    def push(self, item):
         self.__list.append(item)
 
     def pop(self):
         return self.__list.pop()
 
     def peek(self):
-        if self.__list: # 判断是否为空
-            return self.__list[len(self.__list)-1]
+        if self.__list:  # 判断是否为空
+            return self.__list[len(self.__list) - 1]
             # return self.__list[-1]
         else:
             return None
 
     def is_empty(self):
         return self.__list == []
-        #return not self.__lsit
+        # return not self.__lsit
 
     def size(self):
         return len(self.__list)
-
 
 
 if __name__ == "__main__":
