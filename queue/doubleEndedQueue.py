@@ -21,3 +21,18 @@ class DoubleEndedQueue(object):
 
     def size(self):
         return len(self.__list)
+
+
+if __name__ == "__main__":
+    s = DoubleEndedQueue()
+    s.add_front(11)
+    s.add_front(12)
+    s.add_front(13)
+    s.add_front(14)
+
+    print(s.is_empty())
+    print(s.size())
+    print(s.pop_front())
+    print(s.pop_front())
+    print(s.pop_front())
+    print(s.pop_front())
