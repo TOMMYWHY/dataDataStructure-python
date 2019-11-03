@@ -39,17 +39,28 @@ class SingleLinkList(object):
 
     def add(self, item):
         new_node = Node(item)
-        new_node.next = self.__head
-        self.__head = new_node
+        if self.is_empty():
+            self.__head = new_node
+            new_node.next = new_node
+        else:
+            cur = self.__head
+            while cur.next != self.__head:
+                cur = cur.next
+            # cur is last node
+            new_node.next = self.__head
+            self.__head = new_node
+            cur.next = new_node
 
     def append(self, item):
         new_node = Node(item)
         if self.is_empty():
             self.__head = new_node
+            new_node.next = new_node
         else:
             current = self.__head
-            while current.next != None:
+            while current.next != self.__head:
                 current = current.next
+            new_node.next = self.__head
             current.next = new_node
 
     def insert(self, position, item):
@@ -73,26 +84,42 @@ class SingleLinkList(object):
             pre.next = new_node
 
     def remove(self, item):
+        if self.is_empty():
+            return
+
         cur = self.__head
         pre = None
-        while cur != None:
+        while cur.next != self.__head:
             if cur.element == item:
                 if cur == self.__head:
+                    rear = self.__head
+                    while rear.next != self.__head:
+                        rear = rear.next
                     self.__head = cur.next
+                    rear.next = self.__head
                 else:
                     pre.next = cur.next
-                break
+                return
             else:
                 pre = cur
                 cur = cur.next
+        if cur.element==item:
+            if cur ==self.__head:
+                self.__head = None
+            else:
+                pre.next = cur.next
 
     def search(self, item):
+        if self.is_empty():
+            return False
         current = self.__head
-        while current != None:
+        while current != self.__head:
             if current.element == item:
                 return True
             else:
                 current = current.next
+        if current.element == item:
+            return True
         return False
 
 
