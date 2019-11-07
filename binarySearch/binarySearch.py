@@ -1,4 +1,5 @@
 def binary_search(a_list, item):
+    """递归"""
     n = len(a_list)
     if n > 0:
         mid = n // 2
@@ -12,6 +13,7 @@ def binary_search(a_list, item):
 
 
 def binary_search_2(a_list, item):
+    """非递归"""
     n = len(a_list)
     first = 0
     last = n - 1
